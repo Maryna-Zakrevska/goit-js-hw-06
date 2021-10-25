@@ -10,7 +10,7 @@ const createBoxes = (amount) => {
   boxesArray.length = amount;
   boxesArray.fill(1, 0);
   const boxes = boxesArray.map((item, index, array) => {
-    const boxWidth = `${30 + 10 * index}px`;
+    const boxWidth = `${100 + 10 * index}px`;
     const boxHeight = `${30 + 10 * index}px`;
     const box = document.createElement('div');
     box.style.width = boxWidth;
@@ -28,9 +28,9 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-const createButtonClick = () => { createBoxes(inputRef.value); event.currentTarget.setAttribute("disabled", true) };
-const destroyButtonClick = () => { divRef.innerHTML = ""; inputRef.value = 0; createButtonRef.removeAttribute("disabled")};
-
+const createButtonClick = () => { createBoxes(inputRef.value);};
+const destroyButtonClick = () => { divRef.innerHTML = ""; 
+inputRef.value = 0;};
 
 
 

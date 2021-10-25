@@ -1,13 +1,11 @@
 const formRef = document.querySelector('form');
-const inputsRef = formRef.querySelectorAll('input');
 
-inputsRef.forEach((input) => { input.setAttribute("required", true) });
-
-const formSubmit = (event) => {event.preventDefault(); const {
-    elements: { email, password }
-} = event.currentTarget;
+const formSubmit = (event) => {event.preventDefault(); 
+    if (event.currentTarget.email.value === "" || event.currentTarget.password.value === "") 
+    {window.alert("Будьте добры, заполните все поля формы")}; 
+    const {elements: { email, password }} = event.currentTarget;
     console.log({ email: email.value, password: password.value });
-    event.currentTarget.reset();
+    event.currentTarget.reset(); 
 }
 
 formRef.addEventListener("submit", formSubmit);
