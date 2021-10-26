@@ -10,7 +10,7 @@ const createBoxes = (amount) => {
   boxesArray.length = amount;
   boxesArray.fill(1, 0);
   const boxes = boxesArray.map((item, index, array) => {
-    const boxWidth = `${100 + 10 * index}px`;
+    const boxWidth = `${30 + 10 * index}px`;
     const boxHeight = `${30 + 10 * index}px`;
     const box = document.createElement('div');
     box.style.width = boxWidth;
